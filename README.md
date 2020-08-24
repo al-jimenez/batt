@@ -1,4 +1,4 @@
-# batt()
+# batt
 This is a simple function that displays the status of the MacBook Pro's battery.  
 
 ## Use
@@ -8,6 +8,6 @@ I just recently replaced my MacBook Pro's battery becasue it has too many cycles
 ## OS
 Very specific to macOS and MacBook Pro.  Uses system_profiler calls to get info.
 
-## Help menu
+## Output of batt script
 When you execute batt it will return the following information:
 ![Output](https://github.com/al-jimenez/batt/blob/master/batt.png)
