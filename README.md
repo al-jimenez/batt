@@ -10,4 +10,4 @@ Very specific to macOS and MacBook Pro.  Uses system_profiler calls to get info.
 
 ## Help menu
 When you execute batt it will return the following information:
-![Output]()
+![Output](https://github.com/al-jimenez/batt/blob/master/batt.png)
