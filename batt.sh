@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
 #batt() {
+
+ltrim()  { local char=${1:-[:space:]} ; sed "s%^[${char//%/\\%}]*%%"; }      # Removes all leading whitespace.  i.e: echo " message" | ltrim
+rtrim()  { local char=${1:-[:space:]} ; sed "s%[${char//%/\\%}]*$%%"; } 	   # Removes all trailing whitespace. i.e: echo "message " | rtrim
+trim()   { ltrim "$1" | rtrim "$1"; }                                        # Removes all leading/trailing whitespace.  i.e: echo " message " | trim
+squeeze() { local char=${1:-[[:space:]]}; sed "s%\(${char//%/\\%}\)\+%\1%g" | trim "$char"; }
+
   batt_install_date=$(date -j -f "%b %d %Y %H:%M:%S" "Jul 11 2020 08:00:00" +%s)        # date arithmatic
   now=$(date +%s)                                                                       # today's date
   days_installed=$(printf '%d days' "$(( (now-batt_install_date)/86400 ))")             # number of days installed since 7/11/2020
